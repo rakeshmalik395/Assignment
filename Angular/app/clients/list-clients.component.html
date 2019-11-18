@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastNAme</th>
+        <th>Date of Birth</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of SearchedResults">
+        <td>{{result.ClientId }}</td>
+        <td>{{result.FirstName | uppercase  }}</td>
+        <td>{{result.LastName | uppercase }}</td>
+        <td>{{result.DateOfBirth |  date:"dd/MM/yy"}}</td>
+        <td *ngFor="let address of result.clientAddresses ">{{address.CityName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+
